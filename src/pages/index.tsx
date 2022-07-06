@@ -20,7 +20,7 @@ export default function Home() {
 
               <p>
                 Python developer, graduated in Systems Analysis and Development, passionate about technology. I have public speaking skills, ease of working in a team, willingness to learn and build something new.
-                I've been working with systems integration, more specifically marketplaces, where we build the system to integrate orders, products with stock and price and notifications for the seller. The technologies i've been working are Python, Microsservices, AWS, Unit Tests, GitHub/GitLab and Grafana.
+                I&apos;ve been working with systems integration, more specifically marketplaces, where we build the system to integrate orders, products with stock and price and notifications for the seller. The technologies i&apos;ve been working are Python, Microsservices, AWS, Unit Tests, GitHub/GitLab and Grafana.
               </p>
             </section>
           </div>

@@ -13,7 +13,7 @@ export default function Home() {
 
         <div className={styles.homeContent}>
           <div className={styles.bioContainer}>
-            <Image src='https://github.com/MatheusBLopes.png' alt='Bio photo' width='100px' height='100px'/>
+            <Image src='https://github.com/MatheusBLopes.png' alt='Bio photo' width='10rem' height='10rem'/>
 
             <section>
               <h1>Matheus B. Lopes</h1>

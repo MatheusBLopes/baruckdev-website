@@ -13,14 +13,14 @@ export default function Home() {
 
         <div className={styles.homeContent}>
           <div className={styles.bioContainer}>
-            <Image src='https://github.com/MatheusBLopes.png' alt='Bio photo' />
+            <Image src='https://github.com/MatheusBLopes.png' alt='Bio photo' width='100px' height='100px'/>
 
             <section>
               <h1>Matheus B. Lopes</h1>
 
               <p>
                 Python developer, graduated in Systems Analysis and Development, passionate about technology. I have public speaking skills, ease of working in a team, willingness to learn and build something new.
-                I&apos;ve been working with system integration, more specifically marketplaces, where we build the system to integrate orders, products with stock and price and notifications for the seller. The technologies i&apos;ve been working are Python, Microsservices, AWS, Unit Tests, GitHub/GitLab and Grafana.
+                I&apos;ve been working with systems integration, more specifically marketplaces, where we build the system to integrate orders, products with stock and price and notifications for the seller. The technologies i&apos;ve been working are Python, Microsservices, AWS, Unit Tests, GitHub/GitLab and Grafana.
               </p>
             </section>
           </div>

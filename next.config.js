@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: [process.env.DOMAIN],
+    domains: [process.env.DOMAIN, process.env.BIO_PHOTO],
   },
 }
 

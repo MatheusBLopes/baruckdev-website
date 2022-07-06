@@ -1,5 +1,6 @@
 
 import Head from 'next/head'
+import Image from 'next/image'
 import styles from './home.module.scss'
 
 export default function Home() {
@@ -12,7 +13,7 @@ export default function Home() {
 
         <div className={styles.homeContent}>
           <div className={styles.bioContainer}>
-            <img src={process.env.BIO_PHOTO} />
+            <Image src={process.env.BIO_PHOTO} />
 
             <section>
               <h1>Matheus B. Lopes</h1>

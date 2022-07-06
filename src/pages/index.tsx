@@ -13,7 +13,7 @@ export default function Home() {
 
         <div className={styles.homeContent}>
           <div className={styles.bioContainer}>
-            <Image src={process.env.BIO_PHOTO} alt='Bio photo' />
+            <Image src='https://github.com/MatheusBLopes.png' alt='Bio photo' />
 
             <section>
               <h1>Matheus B. Lopes</h1>

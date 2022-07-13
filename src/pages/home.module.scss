@@ -11,15 +11,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
+            margin: 4rem 0 2rem 0;
 
             img {
                 border-radius: 100%;
-                margin: 2rem;
             }
 
             section {
-                margin: 2rem;
+                margin-left: 2rem;
 
                 h1 {
                     font-size: 2rem;
@@ -41,7 +40,6 @@
         .experienceContainer {
             padding: 2rem;
             display: flex;
-            align-items: center;
             flex-direction: column;
             margin-bottom: 2rem;
             border-top: 1px solid var(--gray-800);
@@ -50,7 +48,6 @@
             h1 {
                 font-size: 2rem;
                 font-weight: 900;
-                width: 100%;
                 color: var(--green-400);
                 margin-bottom: 1rem;
             }
@@ -64,15 +61,18 @@
                     display: flex;
                     flex-wrap: wrap;
                     margin-top: 1rem;
-                
+
                     time {
                         color: var(--gray-300);
                         font-size: 0.98rem;
                         width: 100%;
                     }
 
-                    strong {
-                        margin-right: 1rem;
+                    p {
+                        strong {
+                            margin-right: 1rem;
+                            font-size: 1.2rem;
+                        }
                     }
                 }
             }

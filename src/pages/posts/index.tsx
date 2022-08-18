@@ -23,7 +23,7 @@ export default function Posts({ posts }: Posts) {
 
             <main className={styles.container}>
                 <div className={styles.posts}>
-                    {posts?.map((post: Post) => (
+                    {posts.length > 0 ? (posts?.map((post: Post) => (
                         <Link
                             key={post.slug}
                             href={`/posts/${post.slug}`}
@@ -31,15 +31,15 @@ export default function Posts({ posts }: Posts) {
                             <a>
                                 <time>{post.updatedAt}</time>
                                 <strong>{post.title}</strong>
-                                <div 
+                                <div
                                     className={styles.excerpt}
                                     dangerouslySetInnerHTML={{
-                                    __html: post.excerpt
-                                }} />
+                                        __html: post.excerpt
+                                    }} />
 
                             </a>
                         </Link>
-                    ))}
+                    ))) : (<p>There are no posts yet</p>)}
 
 
                 </div>
@@ -68,8 +68,8 @@ export async function getServerSideProps() {
     })
 
     return {
-        props:  {
+        props: {
             posts
-        } 
+        }
     }
 }

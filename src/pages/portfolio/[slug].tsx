@@ -19,7 +19,7 @@ export default function ProjectPost({ post }: PostProps) {
     return (
         <>
             <Head>
-                <title>Ignews | Baruckdev</title>
+                <title>{post.title} | Baruckdev</title>
             </Head>
             <main className={styles.container}>
                 <article className={styles.post}>

@@ -31,8 +31,9 @@ export default function Home() {
             <h1>Experience</h1>
 
             <div className={styles.listContainer}>
-              <div className={styles.listItem}><time>From 01/08/2019 to 23/11/2021</time><p><strong>PUC-PR</strong>Graduated in Systems Analysis and Development</p></div>
-              <div className={styles.listItem}><time>From 23/11/2020 to 23/05/2022</time><p><strong>Olist</strong>I worked with systems integration, more specifically marketplaces, where we build the system to integrate orders, products with stock and price and notifications for the seller. The technologies I worked with were Python, Django, Docker, Microservices, AWS, Unit Tests, GitHub/GitLab and Grafana.</p></div>
+              <div className={styles.listItem}><time>01/08/2019 - 23/11/2021</time><p><strong>PUC-PR</strong>Graduated in Systems Analysis and Development</p></div>
+              <div className={styles.listItem}><time>23/11/2020 - 23/05/2022</time><p><strong>Olist</strong>I worked with systems integration, more specifically marketplaces, where we build the system to integrate orders, products with stock and price and notifications for the seller. The technologies I worked with were Python, Django, Docker, Microservices, AWS, Unit Tests, GitHub/GitLab and Grafana.</p></div>
+              <div className={styles.listItem}><time>05/11/2022 - Now</time><p><strong>Itaú Bank</strong>In my current role, I thrive in the fast-paced Investment Services community, utilizing a range of technologies such as Python, lambdas, Terraform, CloudFormation, AWS, Grafana, and SQL/NoSQL databases. I excel at building efficient and scalable solutions, leveraging lambdas to streamline processes. With expertise in infrastructure management using Terraform and CloudFormation, I architect secure and robust solutions using AWS cloud provider. I harness the power of Grafana for monitoring and utilize SQL/NoSQL databases for efficient data storage and retrieval. Additionally, I am meticulous in conducting unit tests to ensure software reliability. Overall, I contribute to the success of our organization by delivering exceptional results and maintaining high-quality standards.</p></div>
             </div>
           </div>
 

@@ -13,18 +13,6 @@ export function Header() {
                         activeClassName={styles.active}>
                             <a>Home</a>
                     </ActiveLink>
-
-                    <ActiveLink
-                        href="/posts"
-                        activeClassName={styles.active}>
-                            <a>Posts</a>
-                    </ActiveLink>
-
-                    <ActiveLink
-                        href="/portfolio"
-                        activeClassName={styles.active}>
-                            <a>Portfolio</a>
-                    </ActiveLink>
                 </nav>
             </div>
         </header>

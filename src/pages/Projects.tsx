@@ -74,45 +74,88 @@ export default function Projects() {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">My Projects</h1>
-        <p className="text-muted-foreground text-lg">A collection of my work and experiments</p>
+    <div className="space-y-8 animate-fade-in relative z-10">
+      <div className="text-center space-y-6 pt-8 pb-4">
+        <div className="flex items-center justify-center gap-4 mb-8">
+          <div className="w-3 h-3 bg-tokyo-blue rounded-full animate-pulse"></div>
+          <h1 className="text-5xl font-bold tokyo-gradient-text leading-tight">My Projects</h1>
+          <div className="w-3 h-3 bg-tokyo-purple rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+        </div>
+        <p className="text-muted-foreground text-xl max-w-2xl mx-auto leading-relaxed">
+          A collection of my work and experiments, built with passion and modern technologies
+        </p>
+        <div className="flex items-center justify-center gap-2 mt-6">
+          <div className="w-2 h-2 bg-tokyo-cyan rounded-full animate-pulse"></div>
+          <span className="text-sm text-tokyo-cyan font-mono">Click on any project to explore</span>
+        </div>
       </div>
 
       {projects.length === 0 ? (
-        <div className="text-center py-12">
-          <p className="text-muted-foreground">Add <code>.md</code> files in <code>src/projects/</code>.</p>
+        <div className="text-center py-16">
+          <div className="w-16 h-16 bg-muted/30 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-8 h-8 bg-muted-foreground/50 rounded"></div>
+          </div>
+          <p className="text-muted-foreground text-lg">No projects found</p>
+          <p className="text-sm text-muted-foreground mt-2">
+            Add <code className="bg-muted/50 px-2 py-1 rounded text-tokyo-cyan">.md</code> files in <code className="bg-muted/50 px-2 py-1 rounded text-tokyo-cyan">src/projects/</code>.
+          </p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map(project => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
             <Card 
               key={project.id} 
-              className="cursor-pointer hover:shadow-lg transition-shadow duration-200 hover:scale-[1.02] transition-transform"
+              className="group cursor-pointer tokyo-border-glow hover:tokyo-glow transition-all duration-500 hover:scale-[1.02] animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
               onClick={() => handleProjectClick(project.id)}
             >
-              <CardHeader>
-                <CardTitle className="text-xl">{project.title}</CardTitle>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <CardHeader className="relative pb-4">
+                <div className="flex items-start justify-between">
+                  <CardTitle className="text-xl text-foreground group-hover:text-primary transition-colors duration-300">
+                    {project.title}
+                  </CardTitle>
+                  <div className="w-2 h-2 bg-tokyo-blue rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:animate-pulse"></div>
+                </div>
                 {project.description && (
-                  <CardDescription className="line-clamp-3">{project.description}</CardDescription>
+                  <CardDescription className="line-clamp-3 text-muted-foreground leading-relaxed">
+                    {project.description}
+                  </CardDescription>
                 )}
               </CardHeader>
               {project.tags && (
-                <CardContent className="pt-0">
+                <CardContent className="pt-0 relative">
                   <div className="flex flex-wrap gap-2">
-                    {project.tags.map(tag => (
-                      <Badge key={tag} className="text-xs bg-secondary text-secondary-foreground">
+                    {project.tags.map((tag, tagIndex) => (
+                      <Badge 
+                        key={tag} 
+                        className="text-xs bg-secondary/50 text-secondary-foreground border border-border/50 hover:bg-primary/20 hover:text-primary transition-all duration-200"
+                        style={{ animationDelay: `${(index * 0.1) + (tagIndex * 0.05)}s` }}
+                      >
                         {tag}
                       </Badge>
                     ))}
                   </div>
+                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-500"></div>
                 </CardContent>
               )}
+              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
+                <div className="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                </div>
+              </div>
             </Card>
           ))}
         </div>
       )}
+      
+      <div className="text-center py-8">
+        <div className="inline-flex items-center gap-2 text-muted-foreground text-sm">
+          <div className="w-1 h-1 bg-tokyo-pink rounded-full animate-pulse"></div>
+          <span className="font-mono">More projects coming soon...</span>
+          <div className="w-1 h-1 bg-tokyo-pink rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+        </div>
+      </div>
     </div>
   )
 }

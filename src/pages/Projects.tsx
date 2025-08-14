@@ -74,11 +74,11 @@ export default function Projects() {
   }
 
   return (
-    <div className="space-y-6 sm:space-y-8 animate-fade-in relative z-10">
-      <div className="text-center space-y-4 sm:space-y-6 pt-4 sm:pt-8 pb-4">
-        <div className="flex items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+    <div className="space-y-6 sm:space-y-8 animate-fade-in relative z-10 overflow-visible">
+      <div className="text-center space-y-4 sm:space-y-6 pt-4 sm:pt-6 pb-4 overflow-visible">
+        <div className="flex items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8 overflow-visible">
           <div className="w-2 h-2 sm:w-3 sm:h-3 bg-tokyo-blue rounded-full animate-pulse"></div>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tokyo-gradient-text leading-tight">My Projects</h1>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tokyo-gradient-text leading-tight overflow-visible pb-1">My Projects</h1>
           <div className="w-2 h-2 sm:w-3 sm:h-3 bg-tokyo-purple rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
         </div>
         <p className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">

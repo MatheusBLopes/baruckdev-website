@@ -3,32 +3,32 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 
 export default function Home() {
   return (
-    <div className="grid md:grid-cols-[280px_1fr] gap-8">
-      <aside className="flex flex-col items-center gap-6 animate-slide-in-left">
+    <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-6 lg:gap-8">
+      <aside className="flex flex-col items-center gap-4 lg:gap-6 animate-slide-in-left order-1">
         <div className="relative group">
-          <Avatar className="h-32 w-32 ring-4 ring-primary/20 group-hover:ring-primary/40 transition-all duration-300">
+          <Avatar className="h-24 w-24 sm:h-28 sm:w-28 lg:h-32 lg:w-32 ring-4 ring-primary/20 group-hover:ring-primary/40 transition-all duration-300">
             <AvatarImage src="/me.jpg" alt="My photo" />
-            <AvatarFallback className="bg-primary text-primary-foreground text-2xl font-bold">MB</AvatarFallback>
+            <AvatarFallback className="bg-primary text-primary-foreground text-xl sm:text-2xl font-bold">MB</AvatarFallback>
           </Avatar>
           <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         </div>
         <div className="text-center space-y-2">
-          <h1 className="text-3xl font-bold tokyo-gradient-text">Matheus B. Lopes</h1>
-          <p className="text-muted-foreground text-lg">Python Developer • Systems Analysis and Development</p>
+          <h1 className="text-2xl sm:text-3xl lg:text-3xl font-bold tokyo-gradient-text">Matheus B. Lopes</h1>
+          <p className="text-base sm:text-lg text-muted-foreground px-4 sm:px-0">Python Developer • Systems Analysis and Development</p>
         </div>
       </aside>
 
-      <section className="space-y-8 animate-slide-in-right">
+      <section className="space-y-6 lg:space-y-8 animate-slide-in-right order-2">
         <Card className="tokyo-border-glow hover:tokyo-glow transition-all duration-300 group">
           <CardHeader className="pb-4">
-            <CardTitle className="text-2xl flex items-center gap-3">
+            <CardTitle className="text-xl sm:text-2xl flex items-center gap-3">
               <span className="text-tokyo-blue">01.</span>
               About me
             </CardTitle>
-            <CardDescription className="text-lg">Professional overview</CardDescription>
+            <CardDescription className="text-base sm:text-lg">Professional overview</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4 text-muted-foreground">
-            <p className="leading-relaxed">
+            <p className="leading-relaxed text-sm sm:text-base">
               Python developer, graduated in Systems Analysis and Development, passionate about technology. 
               I have public speaking skills, ease of working in a team, willingness to learn and build something new.
             </p>
@@ -39,18 +39,18 @@ export default function Home() {
           </CardContent>
         </Card>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 lg:gap-8">
           <Card className="tokyo-border-glow hover:tokyo-glow-purple transition-all duration-300 group">
             <CardHeader className="pb-4">
-              <CardTitle className="text-xl flex items-center gap-3">
+              <CardTitle className="text-lg sm:text-xl flex items-center gap-3">
                 <span className="text-tokyo-purple">02.</span>
                 Education
               </CardTitle>
               <CardDescription>Academic background</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="space-y-3 p-4 bg-muted/30 rounded-lg border border-border/50">
-                <div className="flex justify-between items-start">
+            <CardContent className="space-y-4 lg:space-y-6">
+              <div className="space-y-3 p-3 sm:p-4 bg-muted/30 rounded-lg border border-border/50">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
                   <div className="font-medium text-foreground">PUC-PR</div>
                   <div className="text-sm text-tokyo-cyan font-mono">01/08/2019 - 23/11/2021</div>
                 </div>
@@ -58,8 +58,8 @@ export default function Home() {
                 <div className="w-full bg-border/50 h-px"></div>
               </div>
       
-              <div className="space-y-3 p-4 bg-muted/30 rounded-lg border border-border/50">
-                <div className="flex justify-between items-start">
+              <div className="space-y-3 p-3 sm:p-4 bg-muted/30 rounded-lg border border-border/50">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
                   <div className="font-medium text-foreground">FIAP</div>
                   <div className="text-sm text-tokyo-cyan font-mono">19/10/2023 - 10/12/2024</div>
                 </div>
@@ -70,8 +70,8 @@ export default function Home() {
                 <div className="w-full bg-border/50 h-px"></div>
               </div>
 
-              <div className="space-y-3 p-4 bg-muted/30 rounded-lg border border-border/50">
-                <div className="flex justify-between items-start">
+              <div className="space-y-3 p-3 sm:p-4 bg-muted/30 rounded-lg border border-border/50">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
                   <div className="font-medium text-foreground">AWS</div>
                   <div className="text-sm text-tokyo-cyan font-mono">May 2025</div>
                 </div>
@@ -86,16 +86,16 @@ export default function Home() {
 
           <Card className="tokyo-border-glow hover:tokyo-glow-pink transition-all duration-300 group">
             <CardHeader className="pb-4">
-              <CardTitle className="text-xl flex items-center gap-3">
+              <CardTitle className="text-lg sm:text-xl flex items-center gap-3">
                 <span className="text-tokyo-pink">03.</span>
                 Experience
               </CardTitle>
               <CardDescription>Professional journey</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-4 lg:space-y-6">
               <div className="space-y-4">
-                <div className="space-y-3 p-4 bg-muted/30 rounded-lg border border-border/50">
-                  <div className="flex justify-between items-start">
+                <div className="space-y-3 p-3 sm:p-4 bg-muted/30 rounded-lg border border-border/50">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
                     <div className="font-medium text-foreground">Itaú Bank</div>
                     <div className="text-sm text-tokyo-cyan font-mono">05/10/2022 - Now</div>
                   </div>
@@ -112,8 +112,8 @@ export default function Home() {
                   <div className="w-full bg-border/50 h-px"></div>
                 </div>
 
-                <div className="space-y-3 p-4 bg-muted/30 rounded-lg border border-border/50">
-                  <div className="flex justify-between items-start">
+                <div className="space-y-3 p-3 sm:p-4 bg-muted/30 rounded-lg border border-border/50">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
                     <div className="font-medium text-foreground">Olist</div>
                     <div className="text-sm text-tokyo-cyan font-mono">23/11/2020 - 23/05/2022</div>
                   </div>

@@ -74,34 +74,34 @@ export default function Projects() {
   }
 
   return (
-    <div className="space-y-8 animate-fade-in relative z-10">
-      <div className="text-center space-y-6 pt-8 pb-4">
-        <div className="flex items-center justify-center gap-4 mb-8">
-          <div className="w-3 h-3 bg-tokyo-blue rounded-full animate-pulse"></div>
-          <h1 className="text-5xl font-bold tokyo-gradient-text leading-tight">My Projects</h1>
-          <div className="w-3 h-3 bg-tokyo-purple rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+    <div className="space-y-6 sm:space-y-8 animate-fade-in relative z-10">
+      <div className="text-center space-y-4 sm:space-y-6 pt-4 sm:pt-8 pb-4">
+        <div className="flex items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+          <div className="w-2 h-2 sm:w-3 sm:h-3 bg-tokyo-blue rounded-full animate-pulse"></div>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tokyo-gradient-text leading-tight">My Projects</h1>
+          <div className="w-2 h-2 sm:w-3 sm:h-3 bg-tokyo-purple rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
         </div>
-        <p className="text-muted-foreground text-xl max-w-2xl mx-auto leading-relaxed">
+        <p className="text-muted-foreground text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed px-4 sm:px-0">
           A collection of my work and experiments, built with passion and modern technologies
         </p>
-        <div className="flex items-center justify-center gap-2 mt-6">
-          <div className="w-2 h-2 bg-tokyo-cyan rounded-full animate-pulse"></div>
-          <span className="text-sm text-tokyo-cyan font-mono">Click on any project to explore</span>
+        <div className="flex items-center justify-center gap-2 mt-4 sm:mt-6">
+          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-tokyo-cyan rounded-full animate-pulse"></div>
+          <span className="text-xs sm:text-sm text-tokyo-cyan font-mono">Click on any project to explore</span>
         </div>
       </div>
 
       {projects.length === 0 ? (
-        <div className="text-center py-16">
-          <div className="w-16 h-16 bg-muted/30 rounded-full flex items-center justify-center mx-auto mb-4">
-            <div className="w-8 h-8 bg-muted-foreground/50 rounded"></div>
+        <div className="text-center py-12 sm:py-16">
+          <div className="w-12 h-12 sm:w-16 sm:h-16 bg-muted/30 rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-muted-foreground/50 rounded"></div>
           </div>
-          <p className="text-muted-foreground text-lg">No projects found</p>
-          <p className="text-sm text-muted-foreground mt-2">
+          <p className="text-muted-foreground text-base sm:text-lg">No projects found</p>
+          <p className="text-sm text-muted-foreground mt-2 px-4 sm:px-0">
             Add <code className="bg-muted/50 px-2 py-1 rounded text-tokyo-cyan">.md</code> files in <code className="bg-muted/50 px-2 py-1 rounded text-tokyo-cyan">src/projects/</code>.
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <Card 
               key={project.id} 
@@ -110,22 +110,22 @@ export default function Projects() {
               onClick={() => handleProjectClick(project.id)}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <CardHeader className="relative pb-4">
+              <CardHeader className="relative pb-3 sm:pb-4">
                 <div className="flex items-start justify-between">
-                  <CardTitle className="text-xl text-foreground group-hover:text-primary transition-colors duration-300">
+                  <CardTitle className="text-lg sm:text-xl text-foreground group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </CardTitle>
-                  <div className="w-2 h-2 bg-tokyo-blue rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:animate-pulse"></div>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-tokyo-blue rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:animate-pulse"></div>
                 </div>
                 {project.description && (
-                  <CardDescription className="line-clamp-3 text-muted-foreground leading-relaxed">
+                  <CardDescription className="line-clamp-3 text-muted-foreground leading-relaxed text-sm sm:text-base">
                     {project.description}
                   </CardDescription>
                 )}
               </CardHeader>
               {project.tags && (
                 <CardContent className="pt-0 relative">
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {project.tags.map((tag, tagIndex) => (
                       <Badge 
                         key={tag} 
@@ -139,9 +139,9 @@ export default function Projects() {
                   <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-500"></div>
                 </CardContent>
               )}
-              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
-                <div className="w-6 h-6 bg-primary/20 rounded-full flex items-center justify-center">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+              <div className="absolute top-3 sm:top-4 right-3 sm:right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 bg-primary/20 rounded-full flex items-center justify-center">
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full"></div>
                 </div>
               </div>
             </Card>
@@ -149,8 +149,8 @@ export default function Projects() {
         </div>
       )}
       
-      <div className="text-center py-8">
-        <div className="inline-flex items-center gap-2 text-muted-foreground text-sm">
+      <div className="text-center py-6 sm:py-8">
+        <div className="inline-flex items-center gap-2 text-muted-foreground text-xs sm:text-sm">
           <div className="w-1 h-1 bg-tokyo-pink rounded-full animate-pulse"></div>
           <span className="font-mono">More projects coming soon...</span>
           <div className="w-1 h-1 bg-tokyo-pink rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>

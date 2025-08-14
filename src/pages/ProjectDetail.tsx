@@ -76,17 +76,17 @@ export default function ProjectDetail() {
 
   if (!project) {
     return (
-      <div className="text-center py-16 animate-fade-in">
-        <div className="w-20 h-20 bg-muted/30 rounded-full flex items-center justify-center mx-auto mb-6">
-          <div className="w-10 h-10 bg-muted-foreground/50 rounded"></div>
+      <div className="text-center py-12 sm:py-16 animate-fade-in">
+        <div className="w-16 h-16 sm:w-20 sm:h-20 bg-muted/30 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-muted-foreground/50 rounded"></div>
         </div>
-        <h1 className="text-3xl font-bold mb-4 tokyo-gradient-text">Project not found</h1>
-        <p className="text-muted-foreground text-lg mb-8 max-w-md mx-auto">
+        <h1 className="text-2xl sm:text-3xl font-bold mb-4 tokyo-gradient-text">Project not found</h1>
+        <p className="text-muted-foreground text-base sm:text-lg mb-6 sm:mb-8 max-w-md mx-auto px-4 sm:px-0">
           The project you're looking for doesn't exist or has been moved.
         </p>
         <Button 
           onClick={() => navigate('/projects')}
-          className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3"
+          className="bg-primary hover:bg-primary/90 text-primary-foreground px-4 sm:px-6 py-2 sm:py-3"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Projects
@@ -96,34 +96,34 @@ export default function ProjectDetail() {
   }
 
   return (
-    <div className="max-w-5xl mx-auto space-y-8 animate-fade-in">
+    <div className="max-w-5xl mx-auto space-y-6 sm:space-y-8 animate-fade-in">
       {/* Header */}
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6">
         <Button 
           variant="ghost" 
           onClick={() => navigate('/projects')}
-          className="mb-6 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all duration-200"
+          className="mb-4 sm:mb-6 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all duration-200"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Projects
         </Button>
         
-        <div className="space-y-4">
-          <div className="flex items-start justify-between">
-            <div className="flex-1 space-y-4">
-              <h1 className="text-5xl font-bold tokyo-gradient-text leading-tight">{project.title}</h1>
+        <div className="space-y-4 sm:space-y-6">
+          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 sm:gap-6">
+            <div className="flex-1 space-y-3 sm:space-y-4">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tokyo-gradient-text leading-tight">{project.title}</h1>
               {project.description && (
-                <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl">
+                <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-3xl">
                   {project.description}
                 </p>
               )}
               
               {project.tags && (
-                <div className="flex flex-wrap gap-3 pt-2">
+                <div className="flex flex-wrap gap-2 sm:gap-3 pt-2">
                   {project.tags.map((tag, index) => (
                     <span 
                       key={tag} 
-                      className="px-4 py-2 bg-secondary/50 text-secondary-foreground rounded-full text-sm border border-border/50 hover:bg-primary/20 hover:text-primary hover:border-primary/30 transition-all duration-200"
+                      className="px-3 py-1.5 sm:px-4 sm:py-2 bg-secondary/50 text-secondary-foreground rounded-full text-sm border border-border/50 hover:bg-primary/20 hover:text-primary hover:border-primary/30 transition-all duration-200"
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
                       {tag}
@@ -133,16 +133,16 @@ export default function ProjectDetail() {
               )}
             </div>
             
-            <div className="flex gap-3 ml-6">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:ml-6">
               {project.repository && (
                 <Button 
                   variant="outline" 
-                  size="lg" 
+                  size="sm"
                   asChild
                   className="border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-200"
                 >
                   <a href={project.repository} target="_blank" rel="noopener noreferrer">
-                    <Github className="w-5 h-5 mr-2" />
+                    <Github className="w-4 h-4 mr-2" />
                     View Code
                   </a>
                 </Button>
@@ -150,12 +150,12 @@ export default function ProjectDetail() {
               {project.demo && (
                 <Button 
                   variant="outline" 
-                  size="lg" 
+                  size="sm"
                   asChild
                   className="border-accent/30 text-accent hover:bg-accent/10 hover:border-accent/50 transition-all duration-200"
                 >
                   <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="w-5 h-5 mr-2" />
+                    <ExternalLink className="w-4 h-4 mr-2" />
                     Live Demo
                   </a>
                 </Button>
@@ -166,18 +166,18 @@ export default function ProjectDetail() {
       </div>
 
       {/* Content */}
-      <div className="prose prose-slate max-w-none prose-invert prose-headings:text-foreground prose-p:text-muted-foreground prose-strong:text-foreground prose-code:text-foreground prose-pre:bg-secondary prose-pre:text-foreground prose-pre:border prose-pre:border-border/50 prose-pre:rounded-lg prose-pre:p-6 prose-pre:shadow-lg prose-blockquote:border-l-primary prose-blockquote:bg-muted/30 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg prose-a:text-primary prose-a:no-underline hover:prose-a:text-accent prose-a:transition-colors prose-a:duration-200 prose-hr:border-border/50 prose-hr:my-8 prose-ul:space-y-2 prose-ol:space-y-2 prose-li:text-muted-foreground prose-table:border-border/50 prose-th:border-border/50 prose-td:border-border/50">
+      <div className="prose prose-slate max-w-none prose-invert prose-headings:text-foreground prose-p:text-muted-foreground prose-strong:text-foreground prose-code:text-foreground prose-pre:bg-secondary prose-pre:text-foreground prose-pre:border prose-pre:border-border/50 prose-pre:rounded-lg prose-pre:p-4 sm:prose-pre:p-6 prose-pre:shadow-lg prose-blockquote:border-l-primary prose-blockquote:bg-muted/30 prose-blockquote:py-2 prose-blockquote:px-3 sm:prose-blockquote:px-4 prose-blockquote:rounded-r-lg prose-a:text-primary prose-a:no-underline hover:prose-a:text-accent prose-a:transition-colors prose-a:duration-200 prose-hr:border-border/50 prose-hr:my-6 sm:prose-hr:my-8 prose-ul:space-y-2 prose-ol:space-y-2 prose-li:text-muted-foreground prose-table:border-border/50 prose-th:border-border/50 prose-td:border-border/50 prose-sm sm:prose-base">
         <Markdown remarkPlugins={[remarkGfm]}>
           {project.content}
         </Markdown>
       </div>
       
       {/* Footer */}
-      <div className="border-t border-border/40 pt-8 mt-12">
-        <div className="flex items-center justify-between">
+      <div className="border-t border-border/40 pt-6 sm:pt-8 mt-8 sm:mt-12">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-2 h-2 bg-tokyo-blue rounded-full animate-pulse"></div>
-            <span className="text-sm text-muted-foreground font-mono">Project completed</span>
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-tokyo-blue rounded-full animate-pulse"></div>
+            <span className="text-xs sm:text-sm text-muted-foreground font-mono">Project completed</span>
           </div>
           <Button 
             variant="ghost" 

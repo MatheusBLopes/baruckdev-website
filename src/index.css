@@ -60,6 +60,8 @@
     min-height: 100vh;
     font-family: 'Inter', system-ui, sans-serif;
     position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   /* Subtle grid background pattern */
@@ -117,6 +119,48 @@
   * {
     scrollbar-width: thin;
     scrollbar-color: hsl(var(--border)) hsl(var(--muted));
+  }
+
+  /* Mobile-specific improvements */
+  @media (max-width: 640px) {
+    /* Reduce floating particles on mobile for better performance */
+    .particle {
+      display: none;
+    }
+    
+    /* Improve touch targets */
+    button, a, [role="button"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    /* Reduce animations on mobile for better performance */
+    * {
+      animation-duration: 0.3s !important;
+      transition-duration: 0.2s !important;
+    }
+    
+    /* Optimize grid background for mobile */
+    body::before {
+      background-size: 30px 30px;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    :root {
+      --border: 230 15% 40%;
+      --muted: 230 15% 25%;
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
@@ -179,6 +223,23 @@
   .particle:nth-child(7) { left: 70%; animation-delay: 2s; }
   .particle:nth-child(8) { left: 80%; animation-delay: 4s; }
   .particle:nth-child(9) { left: 90%; animation-delay: 1s; }
+
+  /* Mobile-optimized components */
+  .mobile-optimized {
+    @apply touch-manipulation;
+  }
+
+  .mobile-card {
+    @apply p-4 sm:p-6;
+  }
+
+  .mobile-text {
+    @apply text-sm sm:text-base;
+  }
+
+  .mobile-heading {
+    @apply text-2xl sm:text-3xl lg:text-4xl;
+  }
 }
 
 @layer utilities {
@@ -261,5 +322,22 @@
     border: 1px solid transparent;
     background: linear-gradient(135deg, hsl(var(--background)), hsl(var(--background))) padding-box,
                 linear-gradient(135deg, hsl(var(--accent)), hsl(var(--tokyo-pink))) border-box;
+  }
+
+  /* Mobile-specific utilities */
+  .mobile-hidden {
+    @apply hidden sm:block;
+  }
+
+  .mobile-visible {
+    @apply block sm:hidden;
+  }
+
+  .mobile-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .mobile-margin {
+    @apply mx-4 sm:mx-6 lg:mx-8;
   }
 }

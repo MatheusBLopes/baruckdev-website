@@ -55,7 +55,6 @@ export default function Home() {
                   <div className="text-sm text-tokyo-cyan font-mono">01/08/2019 - 23/11/2021</div>
                 </div>
                 <p className="text-sm text-muted-foreground">Graduated in Systems Analysis and Development</p>
-                <div className="w-full bg-border/50 h-px"></div>
               </div>
       
               <div className="space-y-3 p-3 sm:p-4 bg-muted/30 rounded-lg border border-border/50">
@@ -67,7 +66,6 @@ export default function Home() {
                 <p className="text-xs text-tokyo-yellow font-mono bg-muted/50 p-2 rounded border border-border/30">
                   Studied Kubernetes, Clean Architecture, DDD, BDD, ACID, SAGA, Security, LGPD, Microservices, AWS, Serverless, GitHub Actions
                 </p>
-                <div className="w-full bg-border/50 h-px"></div>
               </div>
 
               <div className="space-y-3 p-3 sm:p-4 bg-muted/30 rounded-lg border border-border/50">
@@ -109,7 +107,6 @@ export default function Home() {
                       </span>
                     ))}
                   </div>
-                  <div className="w-full bg-border/50 h-px"></div>
                 </div>
 
                 <div className="space-y-3 p-3 sm:p-4 bg-muted/30 rounded-lg border border-border/50">
